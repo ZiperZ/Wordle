@@ -1,0 +1,77 @@
+.wordle-game-container {
+    width: 500px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wordle-board-container {
+    margin-top: 1rem;
+    width: 350px;
+}
+
+.wordle-message-container {
+    opacity: 0;
+    width: 380px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.wordle-message-container.visible {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+
+.wordle-target-word {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.wordle-win-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.wordle-header {
+    width: 100%;
+    height: 3rem;
+    font-size: 2rem;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: white;
+    user-select: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    border-bottom: 2px solid rgb(77, 77, 77);
+}
+
+.wordle-reset-button {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-top: 2rem;
+}
+
+.wordle-message-text {
+    text-align: center;
+}
+
+.wordle-reset-button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

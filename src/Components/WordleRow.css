@@ -1,0 +1,122 @@
+.wordle-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.wordle-row-tile {
+    /* background: #121213; */
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid #3a3a3c;
+    border-radius: 2px;
+    width: 62px;
+    height: 62px;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    color: #d7dadc;
+    user-select: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wordle-row.doesnt-exist {
+    animation: doesntExistAnimation 500ms ease-in-out forwards;
+}
+
+.wordle-row-tile.has-letter {
+    animation: hasLetterInitialAnimation 200ms ease-in-out forwards;
+    border: 2px solid #565758;
+}
+
+.wordle-row-tile.correct {
+    animation: transformAnimation 300ms ease-in-out forwards, correctAnimation 300ms ease-in-out forwards;
+}
+
+.wordle-row-tile.present {
+    animation: transformAnimation 300ms ease-in-out forwards, presentAnimation 300ms ease-in-out forwards;
+}
+
+.wordle-row-tile.absent {
+    animation: transformAnimation 300ms ease-in-out forwards, absentAnimation 300ms ease-in-out forwards;
+}
+
+@keyframes transformAnimation {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0);
+        border: 1px solid #565758;
+    }
+    100% {
+        transform: scaleY(1);
+        border: none;
+    }
+}
+
+@keyframes hasLetterInitialAnimation {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes correctAnimation {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: transparent;
+    }
+    100% {
+        background: #538d4e;
+    }
+}
+
+@keyframes absentAnimation {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: transparent;
+    }
+    100% {
+        background: #3a3a3c;
+    }
+}
+
+@keyframes presentAnimation {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: transparent;
+    }
+    100% {
+        background: #b59f3b;
+    }
+}
+
+@keyframes doesntExistAnimation {
+    0% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
